@@ -1,5 +1,6 @@
 let users = {}; // creation of an empty dictionary to store the information about the sport and the corresponding username and password
-  
+var globalsports = localStorage.getItem('globalsports');
+
 function loadUsersFromLocalStorage() {
   const userDataString = localStorage.getItem('users');
   if (userDataString) {
@@ -12,12 +13,19 @@ function saveUsersToLocalStorage() {
   localStorage.setItem('users', JSON.stringify(users)); // Store data in LocalStorage 
 }
 
+
 function checkLogin() {
+  const sport = document.getElementById("my_sport").value.toLowerCase();
   const username = document.getElementById("my_username").value;
   const password = document.getElementById("my_password").value;
-  const sport = document.getElementById("my_sport").value.toLowerCase();
+  globalsports=sport.value;
+  localStorage.setItem('globalsports', sport);
+  console.log(globalsports)
+  // console.log(users[sport])
+  // console.log(users[sport].username === username)
+  // console.log(users[sport].password === password)
 
-  if (users[sport] && users[sport].username === username && users[sport].password === password) {
+  if (users[sport] && users[sport].username == username && users[sport].password == password) {
     return true;  // Login successful
   } 
   return false;
@@ -96,7 +104,14 @@ loadUsersFromLocalStorage();
   });
   
   function announce(text) {
+    let final = document.getElementById(globalsports);
     console.log("Announcement: " + text); // Announce the text with proper formatting
-    
-    alert("An announcement has been made!");//giving an alert whenever an announcement is made
-  }
+    console.log(globalsports)
+    if (final){
+      var para = final.querySelector("p")
+      para.innerHTML= "Announcement: " + text;
+
+      alert("An announcement has been made!");//giving an alert whenever an announcement is made
+      location.href="details.html";
+    };
+  };
