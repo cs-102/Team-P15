@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add new user</title>
+    <link rel="stylesheet" href="coaches.css">
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+        
+        <h1>Fill the form to add new coach</h1>
+        <label for="new_user">New Username:</label>
+        <input type="text" id="new_user">
+        <label for="new_sports">Sports:</label>
+        <input type="text" id="new_sports">
+        <label for="new_password">Password:</label>
+        <input type="text" id="new_password">
+        <br>
+        <h3>As per the permissions only authorities can add new coach so please fill out the below verification info.</h3>
+        <label for="authority_username">Authority Username:</label>
+        <input type="text" id="authority_username">
+        <label for="authority_pass">Password:   </label>
+        <input type="password" id="authority_pass">
+        <button onclick=adduser() type="button" >Submit</button>
+        <button onclick=home() type="button">Return to home</button>
+        <br>
+        <span id="result"></span>
+        <span id="result1"></span></form>
+    </div>
+    
+    <script src="coaches.js"></script>
+</body>
+</html>

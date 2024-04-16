@@ -1,0 +1,153 @@
+/* using the same css file file for all the 3 html files  */
+/* setting up the margin and padding equal to zero for html */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image:url(https://png.pngtree.com/back_origin_pic/05/05/75/3148f20485dd0c3faeff0f1daaf46189.jpg) ;
+  background-size:cover; 
+
+}
+
+/* Container for the sign-in form */
+.container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  display: flex;
+ 
+  animation: fadeInUp 0.5s ease-in-out forwards; /*looks like the elements are coming out (look at the heading to observer)*/
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Sign-in form styling */
+form {
+ /* the units can be converted to relative units if needed */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  padding: 30px;
+  width: 350px; 
+  animation: slideInRight 0.5s ease-in-out forwards;
+  padding-bottom: 2rem;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+     transform: translateY(20px); /*here the different in the translateY arguments will give the exact distance by which the containier is going to come up in y direction */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);/*same for this here the movement will be along horizontal direction*/
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+
+  h1 {
+    text-align: center;
+    color: #b812e6; 
+    width: 350px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1); }
+  h3 {
+    text-align: center;
+    color: #e252ec; 
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  }
+  
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgb(1, 1, 1); 
+  /* padding-bottom: 2rem; */
+}
+
+input[type="text"],
+input[type="password"] {
+    padding-bottom: 2rem;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid ;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+input:focus{
+  background-color: white;/*this is the color which will display in the input textbox which is selected */
+}
+button {
+  background-color: #3498db;    /* color of the button*/
+  color: #fff;                  /* color of the text inside the button*/
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border: none;                   /* this is to remove the black border around the button */
+}
+
+button:hover {
+  background-color: #2980b9; 
+}
+
+a {
+  color: #2835c5; 
+  text-decoration: underline;
+  
+}
+
+p{
+  text-align: center;
+    color: #e252ec; 
+}
+
+a:hover {
+  color: #f60d0d;
+}
+button.announcement{
+    display: block;
+    font-size: 20px;
+    width: 100vh;
+margin-bottom: 5rem;
+border: 2px solid black;
+border-radius: 25px ;
+background-color: rgba(0, 0, 0, 0.6);
+color:aqua;
+cursor: pointer;
+
+  
+  
+}
+button.announcement:hover{
+  background-color: rgb(244, 117, 63); /*to increase the readebility of the announcement which you are going to make*/
+}

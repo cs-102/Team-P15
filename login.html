@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="coaches.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In page for coach</h1>
+        <form >
+            <label>Sports:</label>
+            <input type="text" id="my_sport">
+            <label for="my_username">Username of coach:</label>
+            <input type="text" id="my_username" required>
+
+            <label for="my_password">Password:</label>
+            <input type="password" id="my_password"  required>
+
+            <button type="submit" onclick="sign_in()">Sign In</button><br>
+            <br>
+            <a href="signup.html">add new user</a>
+        </form>
+    </div>
+    <script src="coaches.js"></script>
+</body>
+</html>
