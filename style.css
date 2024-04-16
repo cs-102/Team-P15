@@ -26,7 +26,7 @@ section {
 
 
 section:nth-child(1) {
-    background-image: url("wall1.jpg")
+    background-image: url("wall1-transformed.png")
 }
 
 section:nth-child(2) {
@@ -113,6 +113,8 @@ section .cards .text-card h3 {
 .text-card {
     border-radius: 10px;
     border: transparent 2px solid;
+    width:25%;
+    
 }
 
 .text-card:hover {
@@ -141,6 +143,7 @@ section .cards .text-card h3 {
 }
 
 .col {
+    
     flex-basis: 25%;
     padding: 10px;
 }
@@ -159,10 +162,11 @@ section .cards .text-card h3 {
 .email-id {
     width: fit-content;
     border-bottom: 1px solid #ccc;
+    padding-top: 10px;
 }
 
 .wallpap1 {
-    background-image: url("wall1.jpg");
+    background-image: url("wall1-transformed.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -256,6 +260,24 @@ section .cards .text-card h3 {
 }
 
 .Login:hover {
+    background-color: #3084b8;
+    border-radius: 15px;
+
+}
+
+.announcement {
+    position: absolute;
+    bottom: 95%;
+    left: 75%;
+    font-weight: bold;
+    font-family: poppins;
+    border-radius: 5px;
+    padding: 7px;
+    color:#054b77 ;
+
+}
+
+.announcement:hover {
     background-color: #3084b8;
     border-radius: 15px;
 
