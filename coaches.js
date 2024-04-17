@@ -1,6 +1,6 @@
 let users = {}; // creation of an empty dictionary to store the information about the sport and the corresponding username and password
 var globalsports = localStorage.getItem('globalsports');
-let strInfo=''
+let strInfo=''; //creation of empty string which will be used further to store the data to local storage
 
 function loadUsersFromLocalStorage() {
   const userDataString = localStorage.getItem('users');
@@ -19,9 +19,7 @@ function checkLogin() {
   globalsports=sport.value;
   localStorage.setItem('globalsports', sport);
   console.log(globalsports)
-  // console.log(users[sport])
-  // console.log(users[sport].username === username)
-  // console.log(users[sport].password === password)
+  
 
   if (users[sport] && users[sport].username == username && users[sport].password == password) {
     return true;  // Login successful
@@ -63,7 +61,7 @@ loadUsersFromLocalStorage();
   
       if (!users[newSport]) { // Check if sport doesn't exist yet
         const userObject = { username: newUser, password: newPass };
-        let userData = localStorage.getItem('usersObject');
+        let userData = localStorage.getItem('users');
         let usersObject;
         if (userData) {
           usersObject = JSON.parse(userData); // Parse existing data from LocalStorage
@@ -71,8 +69,10 @@ loadUsersFromLocalStorage();
         else {
           usersObject = {}; // Create empty object if no data exists
         }
+        console.log(usersObject)
         usersObject[newSport] = userObject; // Add new user data
         localStorage.setItem('users', JSON.stringify(usersObject)); // Store updated data
+        console.log(usersObject)
         
         const result = document.getElementById("result");
         result.innerHTML = "Added user successfully (stored locally)";
@@ -92,7 +92,7 @@ loadUsersFromLocalStorage();
   
 
   function announce(text) {
-    const userDataString = localStorage.getItem('already');
+    const userDataString = localStorage.getItem('announce');
     if (userDataString) {
       strInfo = JSON.parse(userDataString); // Parse data from LocalStorage
       console.log(strInfo); // for checking
@@ -114,9 +114,9 @@ loadUsersFromLocalStorage();
     console.log(globalsports)
     if (final){
       var para = final.querySelector("p")
-      let existingInfo = para.innerHTML;
-      para.innerHTML= existingInfo+"\n"+"Announcement: " + text;
-      console.log("hello")
+      
+      para.innerHTML= "Announcement: " + text;
+      
       
     };
   };
@@ -147,6 +147,7 @@ function loadInfo(){
 function deleteInfo(){
 
   const emptyStr ="";
+  localStorage.removeItem('announce')
   localStorage.setItem('announce', JSON.stringify(emptyStr)); // Store updated data
   alert("All the previous announcements has been deleted!");//giving an alert whenever we make deletation
       
