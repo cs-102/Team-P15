@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+html {
+  font-size: 62.5%;
+
+}
+body{
+  background-image: url(https://image.slidesdocs.com/responsive-images/background/red-motion-advertising-houses-sport-powerpoint-background_e8700372a3__960_540.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.slideshow {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow-y: hidden;
+  font-family: nunito;
+ 
+}
+.slideshow ::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel {
+  width: 80rem;
+  height: 80rem;
+  border: 7rem solid#f8cdb4c0;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -95%;
+  flex-shrink: 0;
+  transition: rotate 1s;
+  position: relative;
+  font-size: 12px;
+}
+
+
+.slide {
+  width: 20rem;
+  position: absolute;
+  background-color: #e1b59cc0;
+  padding: 15px;
+  border-radius: 10%;
+  overflow: auto;
+  height: 200px;
+  width: 200px; 
+}
+
+.slide:nth-child(1) {
+  bottom: -18rem;
+
+
+}
+
+.slide:nth-child(2) {
+  left: -5.5rem;
+  bottom: -5.5rem;
+  rotate: 45deg;
+
+}
+
+.slide:nth-child(3) {
+  left: -17rem;
+  rotate: 90deg;
+}
+
+.slide:nth-child(4) {
+  top: -5.5rem;
+  left: -5.5rem;
+  rotate: 135deg;
+}
+
+.slide:nth-child(5) {
+  top: -18rem;
+  rotate: 180deg;
+}
+
+.slide:nth-child(6) {
+  right: -5.5rem;
+  top: -5.5rem;
+  rotate: 225deg;
+}
+
+.slide:nth-child(7) {
+  right: -17rem;
+  rotate: 270deg;
+}
+
+.slide:nth-child(8) {
+  right: -6rem;
+  bottom: -6rem;
+  rotate: 315deg;
+}
+
+.slide.active img {
+  transform: scale(2.5);
+  transition: transform 0.5s 0.5s;
+
+}
+
+.slide img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+
+}
+
+.controls {
+  position: sticky;
+  bottom: 15rem;
+  background-color: #f8cdb4c0;
+  border-radius: 10%;
+  padding: 20px;
+  font-size: 12px;
+}
+
+.controls a {
+  padding: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 30%;
+  transform: 0.5s;
+  transition: background-color 1s;
+}
+
+.controls a.active {
+  background-color: #e1b59cc0;
+  text-decoration: none;
+}
+
+.controls img {
+  width: 10rem;
+  border-radius: 30%;
+}
+
+.image {
+  z-index: 1;
+  height: 10px;
+  width: 10px;
+
+}
+
+figcaption {
+  text-align: center;
+  text-decoration: none;
+  font-family: poppins;
+  color: rgb(159, 90, 12);
+}
+a:link{
+  text-decoration: none;
+}
+.navbar{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+ 
+
+  
+}
+.navbar span a{
+  color: #084c68c0;
+  padding: 10px;
+  font-size:small;
+  font-family: poppins;
+}
+.about{
+  font-family:poppins;
+  background-color: #e1b59cc0;
+  padding: 15px;
+  border-radius: 5%;
+  height:120px;
+  width:700px;
+  text-align: center;
+  left: 50%;
+}
+#head {
+  font-family: poppins;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 30px;
+  
+  
+}
+#main{
+margin-right: 200px;
+margin-left: 200px;
+height: 350px;
+animation-name: slide_up;
+animation-duration: 0.7s;
+font-size: 22px;
+background-color: #da7e49e3;
+border: 2px solid #da7e49e3;
+border-radius: 20px;
+}
+
+p{
+    padding: 15px;
+}
+.footer {
+  color: white;
+  width: 100%;
+  background: linear-gradient(to right, #f8cdb4cc, #b85116d6);
+  border-top-left-radius: 150px;
+  font-size: 13px;
+  line-height: 20px;
+  background-color: #915a26;
+  margin-top: 30px;
+
+}
+.row {
+
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.col {
+  
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.col h3 {
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.email-id {
+  width: fit-content;
+  border-bottom: 1px solid #ccc;
+  padding-top: 10px;
+}
+.h_60 {
+  height: 60px;
+  justify-content: right;
+}
+

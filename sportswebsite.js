@@ -1,21 +1,21 @@
+// variable initialization
 const carousel = document.querySelector(".carousel");
 const slides = document.querySelectorAll(".slide");
 const controlLinks = document.querySelectorAll(".controls a");
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
+//smooth scrolling
+document.querySelectorAll('a[href^="#main"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
-
-
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+//automatic rotation function
 let i = 0,
   j = 1,
-  intervalId; 
+  intervalId;
 
 const intervalFn = () => {
   intervalId = setInterval(() => {
@@ -30,17 +30,18 @@ const intervalFn = () => {
     activeLink.classList.add("active");
 
     j === 8 && (j = 0);
-  }, 4000);
+  }, 2000);
 };
 
 intervalFn();
+//Control Links Event Listeners
 
+//
 controlLinks.forEach((control) => {
   control.addEventListener("click", () => {
     clearInterval(intervalId);
-    carousel.style.rotate = `-${
-      (i - j + Number(control.dataset.index)) * 45
-    }deg`;
+    carousel.style.rotate = `-${(i - j + Number(control.dataset.index)) * 45
+      }deg`;
 
     document.querySelector(".slide.active").classList.remove("active");
     const activeSlide = document.querySelector(
@@ -52,7 +53,7 @@ controlLinks.forEach((control) => {
     control.classList.add("active");
   });
 });
-
+//Pause and Play Event Listeners
 carousel.addEventListener("mouseenter", () => {
   clearInterval(intervalId);
   console.log("Pause");

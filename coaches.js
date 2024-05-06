@@ -1,6 +1,6 @@
 let users = {}; // creation of an empty dictionary to store the information about the sport and the corresponding username and password
 var globalsports = localStorage.getItem('globalsports');
-let strInfo=''; //creation of empty string which will be used further to store the data to local storage
+let strInfo=''
 
 function loadUsersFromLocalStorage() {
   const userDataString = localStorage.getItem('users');
@@ -19,7 +19,9 @@ function checkLogin() {
   globalsports=sport.value;
   localStorage.setItem('globalsports', sport);
   console.log(globalsports)
-  
+  // console.log(users[sport])
+  // console.log(users[sport].username === username)
+  // console.log(users[sport].password === password)
 
   if (users[sport] && users[sport].username == username && users[sport].password == password) {
     return true;  // Login successful
